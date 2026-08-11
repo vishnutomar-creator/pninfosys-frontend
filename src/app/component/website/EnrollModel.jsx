@@ -1,6 +1,6 @@
 "use client";
 
-import axios from "axios";
+import api from "@/lib/api"; // ⚠️ adjust path to match your actual axios instance file
 import { useState } from "react";
 import { FaTimes } from "react-icons/fa";
 import toast from "react-hot-toast";
@@ -35,20 +35,10 @@ const EnrollModal = ({ courseTitle, isOpen, onClose }) => {
     setSubmitting(true);
 
     try {
-      console.log("Course Title:", courseTitle);
-
-      console.log("Data Sending:", {
+      const response = await api.post("/enrollments", {
         ...form,
         course: courseTitle,
       });
-
-      const response = await axios.post(
-        "http://localhost:5000/api/enrollments",
-        {
-          ...form,
-          course: courseTitle,
-        }
-      );
 
       toast.success(response.data.message || "Enrollment submitted successfully!");
 
