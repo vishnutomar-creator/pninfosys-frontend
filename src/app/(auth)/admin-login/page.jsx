@@ -1,6 +1,6 @@
 "use client";
 
-import axios from "axios"; // API Calls
+import api from "@/lib/api"; // ⚠️ adjust this path to match where your axios instance file actually is
 import { useState } from "react";
 import { Eye, EyeOff, LockKeyhole, Mail, ArrowRight } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -25,13 +25,10 @@ export default function AdminLogin() {
 
     try {
       // Call backend login API
-      const res = await axios.post(
-        "http://localhost:5000/api/auth/login",
-        {
-          email,
-          password,
-        }
-      );
+      const res = await api.post("/auth/login", {
+        email,
+        password,
+      });
 
       // Store JWT Token
       localStorage.setItem("token", res.data.token);
