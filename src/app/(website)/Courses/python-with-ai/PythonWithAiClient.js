@@ -182,12 +182,9 @@ const PythonWithAiClient = () => {
                 onClick={() => setShowEnroll(true)}
                 className="bg-[#0096FF] hover:bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold text-sm tracking-wide transition-all shadow-xl shadow-blue-500/25 active:scale-95"
               >
-                Start 1-Month Free Demo
+                Enroll for ₹3000
               </button>
-              <a
-                href="#syllabus"
-                className="border border-slate-700 hover:border-slate-500 text-white px-8 py-4 rounded-2xl font-bold text-sm transition-all"
-              >
+              <a href="#syllabus" className="border border-slate-700 hover:border-slate-500 text-white px-8 py-4 rounded-2xl font-bold text-sm transition-all">
                 Explore Syllabus
               </a>
             </div>
@@ -222,6 +219,12 @@ const PythonWithAiClient = () => {
                 <FaCheckCircle className="text-green-500 text-lg shrink-0" />
                 Company Internship Certificate & Placement Support
               </div>
+            </div>
+            <div className="border-t border-slate-100 pt-6 mb-6">
+              <div className="text-4xl font-black text-slate-900">₹3000</div>
+              <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest">
+                Complete Course Fee
+              </p>
             </div>
             <div className="border-t border-slate-100 pt-6 flex items-center justify-between">
               <div>
