@@ -21,9 +21,11 @@ const fieldClasses =
   "w-full rounded-lg border border-gray-200 px-4 py-3 text-sm text-gray-800 placeholder:text-gray-400 " +
   "focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-sky-400 transition-colors";
 
-const EnrollModal = ({ courseTitle, isOpen, onClose }) => {
+const EnrollModal = ({ courseTitle, courseName, isOpen, onClose }) => {
   const [form, setForm] = useState(initialState);
   const [submitting, setSubmitting] = useState(false);
+
+  const selectedCourse = courseTitle || courseName || "Training Program";
 
   if (!isOpen) return null;
 
@@ -37,7 +39,7 @@ const EnrollModal = ({ courseTitle, isOpen, onClose }) => {
     try {
       const response = await api.post("/enrollments", {
         ...form,
-        course: courseTitle,
+        course: selectedCourse,
       });
 
       toast.success(response.data.message || "Enrollment submitted successfully!");
@@ -77,7 +79,7 @@ const EnrollModal = ({ courseTitle, isOpen, onClose }) => {
 
         <div className="mb-6 text-center">
           <h2 className="text-2xl font-bold text-gray-900">
-            Enroll in - {courseTitle}
+            Enroll in - {selectedCourse}
           </h2>
           <p className="mt-1 text-sm text-gray-500">
             Fill in your details below to reserve your spot

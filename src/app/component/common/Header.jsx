@@ -35,6 +35,7 @@ export default function Header() {
       type: 'dropdown',
       items: [
         { title: 'MERN Stack with AI', path: '/Courses/mern-stack-with-ai', icon: <Laptop size={14} /> },
+        { title: 'Python with AI', path: '/Courses/python-with-ai', icon: <Code size={14} /> },
         { title: 'Python Data Analytics with AI', path: '/Courses/data-analytics', icon: <Database size={14} /> },
         { title: 'Machine Learning & AI', path: '/Courses/machine-learning-and-ai', icon: <Zap size={14} /> },
         { title: 'Web Designing with AI', path: '/Courses/web-designing-with-ai', icon: <Layout size={14} /> },

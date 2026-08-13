@@ -14,6 +14,103 @@ function slugify(title) {
     .replace(/^-+|-+$/g, "");
 }
 
+// Match course titles with your actual folder names or dynamic routes
+function getCourseRoute(courseOrTitle) {
+  if (!courseOrTitle) return "";
+
+  const title =
+    typeof courseOrTitle === "object"
+      ? courseOrTitle.title || courseOrTitle.name || ""
+      : courseOrTitle;
+  const slug =
+    typeof courseOrTitle === "object" ? courseOrTitle.slug || "" : "";
+
+  const trimmedTitle = title.trim();
+  const lowerTitle = trimmedTitle.toLowerCase();
+  const lowerSlug = slug.trim().toLowerCase();
+
+  // 1. Direct exact mapping for known titles
+  const exactRoutes = {
+    "Machine Learning With AI": "machine-learning-and-ai",
+    "Data Analytics With AI": "data-analytics",
+    "Full Stack Development With AI": "full-stack-development-with-ai",
+    "Full Stack (MERN STACK ) With AI": "full-stack-development-with-ai",
+    "Full Stack (MERN STACK) With AI": "full-stack-development-with-ai",
+    "Full Stack (MERN) With AI": "full-stack-development-with-ai",
+    "MERN Stack With AI": "mern-stack-with-ai",
+    "Web Designing With AI": "web-designing-with-ai",
+    "Python With AI": "python-with-ai",
+    "Python with AI": "python-with-ai",
+    "Python & AI": "python-with-ai",
+    "Python Development": "python-with-ai",
+    "Full Stack Development": "full-stack-development-with-ai",
+    "Full Stack Web Development": "full-stack-development-with-ai",
+    "MERN Stack Development": "mern-stack-with-ai",
+    "MERN Stack": "mern-stack-with-ai",
+    "Web Development": "full-stack-development-with-ai",
+  };
+
+  if (exactRoutes[trimmedTitle]) {
+    return exactRoutes[trimmedTitle];
+  }
+
+  // 2. Direct check if slug matches an existing folder slug
+  const validFolderSlugs = [
+    "full-stack-development-with-ai",
+    "mern-stack-with-ai",
+    "data-analytics",
+    "machine-learning-and-ai",
+    "web-designing-with-ai",
+    "python-with-ai",
+  ];
+  if (validFolderSlugs.includes(lowerSlug)) {
+    return lowerSlug;
+  }
+
+  // 3. Smart Keyword Matching (Full Stack takes precedence over standalone MERN for Full Stack course titles)
+  if (
+    (lowerTitle.includes("python") && lowerTitle.includes("ai")) ||
+    lowerSlug.includes("python-with-ai")
+  ) {
+    return "python-with-ai";
+  }
+  if (
+    lowerTitle.includes("full stack") ||
+    lowerTitle.includes("fullstack") ||
+    lowerSlug.includes("full-stack") ||
+    lowerSlug.includes("fullstack")
+  ) {
+    return "full-stack-development-with-ai";
+  }
+  if (lowerTitle.includes("mern") || lowerSlug.includes("mern")) {
+    return "mern-stack-with-ai";
+  }
+  if (
+    lowerTitle.includes("data analytics") ||
+    lowerSlug.includes("analytics")
+  ) {
+    return "data-analytics";
+  }
+  if (
+    lowerTitle.includes("machine learning") ||
+    lowerSlug.includes("machine-learning")
+  ) {
+    return "machine-learning-and-ai";
+  }
+  if (
+    lowerTitle.includes("web design") ||
+    lowerSlug.includes("web-design")
+  ) {
+    return "web-designing-with-ai";
+  }
+  if (lowerTitle.includes("python") || lowerSlug.includes("python")) {
+    return "python-with-ai";
+  }
+
+  // 4. Fallback to course slug or slugified title
+  return lowerSlug || slugify(trimmedTitle);
+}
+
 function PopularCourses() {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -31,6 +128,7 @@ function PopularCourses() {
         const activeCourses = allCourses.filter(
           (course) => course.status === "Active"
         );
+
         setCourses(activeCourses);
       } catch (error) {
         console.error(error);
@@ -123,11 +221,13 @@ function PopularCourses() {
                     </span>
                   </div>
 
-                  <Link href={`/Courses/${slugify(course.title)}`}>
-                    <button className="w-full bg-[#0096FF] hover:bg-blue-700 text-white py-3 rounded-2xl font-semibold flex items-center justify-center gap-2 transition">
-                      Learn More
-                      <ArrowRight size={18} />
-                    </button>
+                  {/* Learn More */}
+                  <Link
+                    href={`/Courses/${getCourseRoute(course)}`}
+                    className="w-full bg-[#0096FF] hover:bg-blue-700 text-white py-3 rounded-2xl font-semibold flex items-center justify-center gap-2 transition"
+                  >
+                    Learn More
+                    <ArrowRight size={18} />
                   </Link>
                 </div>
               </motion.div>
