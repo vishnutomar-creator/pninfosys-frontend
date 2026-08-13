@@ -1,7 +1,8 @@
 "use client";
 
 import api from "@/lib/api"; // ⚠️ adjust path to match your actual axios instance file
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { FaTimes } from "react-icons/fa";
 import toast from "react-hot-toast";
 
@@ -18,16 +19,55 @@ const initialState = {
 };
 
 const fieldClasses =
-  "w-full rounded-lg border border-gray-200 px-4 py-3 text-sm text-gray-800 placeholder:text-gray-400 " +
+  "w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-800 placeholder:text-gray-400 " +
   "focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-sky-400 transition-colors";
 
 const EnrollModal = ({ courseTitle, courseName, isOpen, onClose }) => {
   const [form, setForm] = useState(initialState);
   const [submitting, setSubmitting] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   const selectedCourse = courseTitle || courseName || "Training Program";
 
-  if (!isOpen) return null;
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    // Lock pinch/browser zoom while the modal is open so the card
+    // stays visually static no matter how much the user tries to zoom.
+    let viewportMeta = document.querySelector('meta[name="viewport"]');
+    const createdMeta = !viewportMeta;
+
+    if (!viewportMeta) {
+      viewportMeta = document.createElement("meta");
+      viewportMeta.name = "viewport";
+      document.head.appendChild(viewportMeta);
+    }
+
+    const originalContent = viewportMeta.getAttribute("content") || "";
+    viewportMeta.setAttribute(
+      "content",
+      "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    );
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+
+      if (createdMeta) {
+        viewportMeta.remove();
+      } else {
+        viewportMeta.setAttribute("content", originalContent);
+      }
+    };
+  }, [isOpen]);
+
+  if (!isOpen || !mounted) return null;
 
   const update = (key, value) => setForm((prev) => ({ ...prev, [key]: value }));
 
@@ -60,34 +100,41 @@ const EnrollModal = ({ courseTitle, courseName, isOpen, onClose }) => {
     }
   };
 
-  return (
+  return createPortal(
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
+      className="fixed inset-0 flex items-end sm:items-center justify-center
+                 overflow-y-auto bg-black/60 sm:p-4 touch-pan-y"
+      style={{ touchAction: "pan-y", zIndex: 2147483647 }}
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl bg-white p-8 shadow-2xl"
+        className="relative w-full sm:max-w-lg sm:my-8 max-h-[85vh] sm:max-h-[75vh]
+                   overflow-y-auto bg-white p-4 sm:p-6 shadow-2xl
+                   rounded-t-2xl sm:rounded-2xl
+                   pb-[max(1rem,env(safe-area-inset-bottom))] sm:pb-6"
         onClick={(e) => e.stopPropagation()}
       >
+        <div className="mx-auto mb-3 h-1.5 w-12 rounded-full bg-gray-200 sm:hidden" />
+
         <button
           onClick={onClose}
           aria-label="Close"
-          className="absolute right-5 top-5 text-gray-400 hover:text-gray-600"
+          className="absolute right-4 top-4 sm:right-5 sm:top-5 text-gray-400 hover:text-gray-600"
         >
           <FaTimes size={20} />
         </button>
 
-        <div className="mb-6 text-center">
-          <h2 className="text-2xl font-bold text-gray-900">
+        <div className="mb-4 text-center">
+          <h2 className="text-xl font-bold text-gray-900">
             Enroll in - {selectedCourse}
           </h2>
           <p className="mt-1 text-sm text-gray-500">
             Fill in your details below to reserve your spot
           </p>
-          <div className="mt-5 border-t border-gray-100" />
+          <div className="mt-4 border-t border-gray-100" />
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-5">
+        <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <input
               className={fieldClasses}
@@ -234,7 +281,7 @@ const EnrollModal = ({ courseTitle, courseName, isOpen, onClose }) => {
           <button
             type="submit"
             disabled={submitting}
-            className="w-full rounded-lg bg-gradient-to-r from-sky-400 to-indigo-600 py-3.5
+            className="w-full rounded-lg bg-gradient-to-r from-sky-400 to-indigo-600 py-3
                        text-sm font-bold uppercase tracking-wide text-white shadow-md
                        transition-transform hover:scale-[1.01] active:scale-[0.99]
                        disabled:opacity-60"
@@ -243,7 +290,8 @@ const EnrollModal = ({ courseTitle, courseName, isOpen, onClose }) => {
           </button>
         </form>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 

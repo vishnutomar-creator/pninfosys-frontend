@@ -17,7 +17,7 @@ export default function Footer() {
           <div className="space-y-6">
             <div className="flex items-center gap-3">
               <img 
-                src="https://pninfosys.com/_next/static/media/pninfosysLogo.0.jw1ne8--i7e.png" 
+                src="/Logos/logo_pninfosys-removebg-preview.png" 
                 alt="PNINFOSYS Logo" 
                 className="h-12 w-auto object-contain brightness-110"
               />

@@ -3,11 +3,11 @@ import React, { useState } from 'react';
 import EnrollModal from "../../../component/website/EnrollModel";
 import { motion, AnimatePresence } from 'framer-motion';
 // Stable Icons (No Export Errors)
-import { 
-    FaCode, FaLayerGroup, FaDatabase, FaCheckCircle, 
-    FaPlay, FaGraduationCap, FaUserCheck, 
-    FaLaptopCode, FaServer, FaChevronDown, FaChevronUp, FaTools, FaGlobe 
-} from 'react-icons/fa'; 
+import {
+    FaCode, FaLayerGroup, FaDatabase, FaCheckCircle,
+    FaPlay, FaGraduationCap, FaUserCheck,
+    FaLaptopCode, FaServer, FaChevronDown, FaChevronUp, FaTools, FaGlobe
+} from 'react-icons/fa';
 // MERN Tech Icons
 import { SiMongodb, SiExpress, SiReact, SiNodedotjs, SiTailwindcss, SiJavascript } from 'react-icons/si';
 
@@ -54,7 +54,7 @@ const FullStackMern = () => {
 
     return (
         <div className="pt-20 bg-white font-sans overflow-hidden">
-            
+
             {/* --- HERO SECTION --- */}
             <section className="relative bg-slate-900 py-24 px-6 overflow-hidden">
                 <div className="absolute -top-24 -left-24 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
@@ -115,10 +115,10 @@ const FullStackMern = () => {
             <section className="bg-slate-900 py-24 px-6 text-white border-t border-white/5">
                 <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
                     <div>
-                        <h2 className="text-4xl font-black mb-8 leading-tight tracking-tight">Watch Our Student <br/>Projects in Action.</h2>
+                        <h2 className="text-4xl font-black mb-8 leading-tight tracking-tight">Watch Our Student <br />Projects in Action.</h2>
                         <div className="space-y-6">
                             <div className="flex gap-4 items-start bg-white/5 p-6 rounded-3xl border border-white/10">
-                                <div className="p-3 bg-cyan-500 text-slate-900 rounded-2xl text-xl"><FaLaptopCode/></div>
+                                <div className="p-3 bg-cyan-500 text-slate-900 rounded-2xl text-xl"><FaLaptopCode /></div>
                                 <div>
                                     <h4 className="font-black text-lg">Project-Based Learning</h4>
                                     <p className="text-slate-400 text-sm">Ecommerce se lekar Social Media tak, real projects par kaam karein.</p>
@@ -126,13 +126,13 @@ const FullStackMern = () => {
                             </div>
                         </div>
                     </div>
-                    
+
                     <div className="relative">
                         <div className="aspect-video bg-slate-800 rounded-[3rem] border-4 border-white/10 overflow-hidden shadow-2xl">
                             {/* Student Success/Project Video */}
-                            <iframe 
+                            <iframe
                                 className="w-full h-full object-cover"
-                                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                                src="https://www.youtube.com/embed/Fr_uzxeLzzs?list=PLi7et6De6HosLUXq7ofg767d27oF6bFQg"
                                 title="MERN Stack Success"
                                 frameBorder="0"
                                 allowFullScreen

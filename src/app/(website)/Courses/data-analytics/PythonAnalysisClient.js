@@ -3,11 +3,11 @@ import React, { useState } from 'react';
 import EnrollModal from "../../../component/website/EnrollModel";
 import { motion, AnimatePresence } from 'framer-motion';
 // Stable Icons
-import { 
-    FaPython, FaDatabase, FaChartBar, FaCheckCircle, 
-    FaPlay, FaGraduationCap, FaUserCheck, 
-    FaBriefcase, FaClock, FaChevronDown, FaChevronUp, FaTools, FaFileExcel 
-} from 'react-icons/fa'; 
+import {
+    FaPython, FaDatabase, FaChartBar, FaCheckCircle,
+    FaPlay, FaGraduationCap, FaUserCheck,
+    FaBriefcase, FaClock, FaChevronDown, FaChevronUp, FaTools, FaFileExcel
+} from 'react-icons/fa';
 import { SiPandas, SiNumpy, SiJupyter } from 'react-icons/si';
 
 const PythonAnalysis = () => {
@@ -47,7 +47,7 @@ const PythonAnalysis = () => {
 
     return (
         <div className="pt-20 bg-white font-sans overflow-hidden">
-            
+
             {/* --- HERO SECTION --- */}
             <section className="relative bg-slate-900 py-24 px-6">
                 <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
@@ -102,8 +102,8 @@ const PythonAnalysis = () => {
                         <h2 className="text-4xl font-black mb-8 leading-tight">Student Success Stories</h2>
                         <div className="space-y-6">
                             {[
-                                { title: "Job-Ready Skills", desc: "Students are now working in top MNCs as Data Analysts.", icon: <FaGraduationCap/> },
-                                { title: "Practical Exposure", desc: "Hands-on training on real-world business datasets.", icon: <FaUserCheck/> }
+                                { title: "Job-Ready Skills", desc: "Students are now working in top MNCs as Data Analysts.", icon: <FaGraduationCap /> },
+                                { title: "Practical Exposure", desc: "Hands-on training on real-world business datasets.", icon: <FaUserCheck /> }
                             ].map((item, i) => (
                                 <div key={i} className="flex gap-4 items-start bg-white/5 p-6 rounded-3xl border border-white/10">
                                     <div className="p-3 bg-yellow-500 text-slate-900 rounded-2xl text-xl">{item.icon}</div>
@@ -115,14 +115,14 @@ const PythonAnalysis = () => {
                             ))}
                         </div>
                     </div>
-                    
+
                     {/* VIDEO PLAYER CARD */}
                     <div className="relative group">
                         <div className="aspect-video bg-slate-800 rounded-[3rem] border-4 border-white/10 overflow-hidden shadow-2xl relative">
                             {/* Aap yahan iframe ya video tag use kar sakte ho */}
-                            <iframe 
+                            <iframe
                                 className="w-full h-full object-cover"
-                                src="https://www.youtube.com/embed/dQw4w9WgXcQ" // Bhai yahan apna YouTube video ID daal dena
+                                src="https://www.youtube.com/embed/wMKw5bsLZU0?list=PLi7et6De6Hovu3z9rV0oKTe19sRJ5bMt6"
                                 title="Student Success Story"
                                 frameBorder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -145,7 +145,7 @@ const PythonAnalysis = () => {
                 <div className="grid md:grid-cols-4 gap-6 relative">
                     {roadmap.map((step, i) => (
                         <div key={i} className="p-8 bg-slate-50 rounded-[2.5rem] border-l-4 border-yellow-500 relative">
-                            <span className="text-5xl font-black text-slate-200 absolute top-4 right-6">{i+1}</span>
+                            <span className="text-5xl font-black text-slate-200 absolute top-4 right-6">{i + 1}</span>
                             <div className="bg-yellow-100 text-yellow-700 text-[10px] font-black px-3 py-1 rounded-full mb-4 inline-block">{step.status}</div>
                             <h4 className="text-xl font-black text-slate-900 mb-2">{step.title}</h4>
                             <p className="text-sm text-slate-500">{step.desc}</p>

@@ -39,7 +39,7 @@ export default function Page() {
 
       <StudentSuccessStories />
 
-      <CollegeWorkshop />
+      {/* <CollegeWorkshop /> */}
 
       <OurProjects />
 
