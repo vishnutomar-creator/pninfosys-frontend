@@ -75,7 +75,7 @@ const FullStackMern = () => {
                                     onClick={() => setShowEnroll(true)}
                                     className="bg-cyan-500 hover:bg-cyan-600 text-slate-900 px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-xs transition-all shadow-xl shadow-cyan-500/20"
                                 >
-                                    Start Learning ₹9000
+                                    Start Learning ₹7000
                                 </button>
                                 <button
                                     onClick={() => setShowEnroll(true)}
