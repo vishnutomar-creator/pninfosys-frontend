@@ -67,7 +67,7 @@ const About = () => {
       icon: <Users className="text-[#0096FF]" size={28} />,
     },
     {
-      label: "MNC Placements",
+      label: "Placements",
       value: "500+",
       icon: <Award className="text-orange-500" size={28} />,
     },
@@ -109,7 +109,7 @@ const About = () => {
               Grow.
             </h1>
 
-            <p className="text-slate-600 text-lg md:text-xl leading-relaxed mb-8 max-w-2xl">
+            <p className="text-slate-600 text-lg md:text-xl leading-relaxed mb-8 max-w-2xl text-justify">
               Since 2018, PNINFOSYS has been dedicated to transforming careers and empowering businesses through technology. Our expertise spans software development, industrial training, internships, live projects and career development programs. By combining practical learning with real industry exposure, we help students build successful careers while delivering high-quality technology solutions for businesses.
             </p>
 
@@ -150,7 +150,7 @@ const About = () => {
             />
 
             {/* Stats Card */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white rounded-3xl shadow-xl px-8 py-6 w-[90%]">
+            {/* <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white rounded-3xl shadow-xl px-8 py-6 w-[90%]">
               <div className="grid grid-cols-4 gap-4 text-center">
                 <div>
                   <h3 className="text-3xl font-bold text-[#0096FF]">2018</h3>
@@ -172,7 +172,7 @@ const About = () => {
                   <p className="text-sm text-gray-500">Projects</p>
                 </div>
               </div>
-            </div>
+            </div> */}
           </motion.div>
         </div>
       </section>
@@ -281,7 +281,7 @@ const About = () => {
               Our Mission
             </h3>
 
-            <p className="text-slate-500 font-medium leading-relaxed">
+            <p className="text-slate-500 font-medium leading-relaxed text-justify">
               To empower students and professionals with industry-relevant
               technology skills while delivering innovative software solutions
               that help businesses grow and succeed in the digital world.
@@ -298,7 +298,7 @@ const About = () => {
               Our Vision
             </h3>
 
-            <p className="text-slate-400 font-medium leading-relaxed">
+            <p className="text-slate-400 font-medium leading-relaxed text-justify">
               To become a trusted global technology partner and a leading IT
               training academy, creating skilled professionals, innovative
               solutions, and lasting impact through technology and education.

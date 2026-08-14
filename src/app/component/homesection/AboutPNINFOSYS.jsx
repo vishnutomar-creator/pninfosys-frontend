@@ -36,7 +36,7 @@ const highlights = [
 
   return (
     <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4">
         {/* Heading */}
         <div className="text-center max-w-4xl mx-auto mb-16">
           <span className="bg-blue-100 text-[#0096FF] px-5 py-2 rounded-full text-sm font-semibold">
@@ -73,19 +73,19 @@ const highlights = [
                 Bridging Education & Industry
               </h3>
 
-              <p className="text-blue-100 leading-relaxed mb-5">
+              <p className="text-blue-100 leading-relaxed mb-5 text-justify">
                 PNINFOSYS was founded with a vision to bridge the gap between
                 academic learning and real industry requirements by combining
                 professional IT training with software development services.
               </p>
 
-              <p className="text-blue-100 leading-relaxed mb-5">
+              <p className="text-blue-100 leading-relaxed mb-5 text-justify">
                 Through live projects, internships, workshops and practical
                 training, students gain hands-on experience while businesses
                 receive innovative technology solutions tailored to their needs.
               </p>
 
-              <p className="text-blue-100 leading-relaxed">
+              <p className="text-blue-100 leading-relaxed text-justify">
                 Today, PNINFOSYS continues to empower aspiring professionals,
                 helping them build successful careers while supporting
                 organizations in their digital transformation journey.
