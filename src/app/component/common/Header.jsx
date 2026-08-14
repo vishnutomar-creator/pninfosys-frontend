@@ -71,7 +71,7 @@ export default function Header() {
       {/* Ticker Bar */}
       <div className="bg-[#0096FF] text-white py-2 overflow-hidden border-b border-white/10">
         <div className="animate-marquee whitespace-nowrap font-black text-[10px] tracking-widest uppercase">
-          🚀 Next MERN Stack Batch starts on 24th April — Join Free 1-Month Demo Now! &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+          🚀 Next MERN Stack Batch starts on 24th August — Join Free 1-Month Demo Now! &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
           🔥 Software Development Company & IT Training Academy &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
         </div>
       </div>

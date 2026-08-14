@@ -41,7 +41,7 @@ function Contact() {
                 <div>
                   <h3 className="font-bold">Office Address</h3>
                   <p className="text-gray-600">
-                    M-2, Gandhi Nagar, Near Mayur Market, Thatipur, Gwalior
+                    MIG 332, Darpan Colony Rd, 8 Dukan, Thatipur, Gwalior
                     (M.P.)
                   </p>
                 </div>
