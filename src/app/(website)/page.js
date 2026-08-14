@@ -13,20 +13,55 @@ import FinalCTA from "../component/homesection/FinalCTA";
 import PopularCourses from "../component/homesection/PopularCourses";
 import CollegeWorkshop from "../component/homesection/CollegeWorkshop";
 
-
 // SEO Metadata
 export const metadata = {
-  title: "PNINFOSYS | IT Training, Courses & Internship",
-  description:
-    "PNINFOSYS provides industry-focused IT courses, internships, project-based training and career-oriented programs for students and professionals.",
-};
+  title:
+    "PNINFOSYS | Software Development Company & IT Training in Gwalior",
 
+  description:
+    "PNINFOSYS is a software development company and IT training institute in Gwalior offering Full Stack Development, Data Analytics, internships, workshops and career-focused training.",
+
+  keywords: [
+    "PNINFOSYS",
+    "software company in Gwalior",
+    "software development company in Gwalior",
+    "IT training institute in Gwalior",
+    "IT courses in Gwalior",
+    "Full Stack Development course in Gwalior",
+    "MERN Stack course in Gwalior",
+    "Data Analytics course in Gwalior",
+    "Python course in Gwalior",
+    "IT internship in Gwalior",
+  ],
+
+  alternates: {
+    canonical: "https://pninfosys.com/",
+  },
+
+  openGraph: {
+    title:
+      "PNINFOSYS | Software Development Company & IT Training in Gwalior",
+
+    description:
+      "Software development, IT training, internships, workshops and career-focused programs by PNINFOSYS.",
+
+    url: "https://pninfosys.com/",
+    siteName: "PNINFOSYS",
+    locale: "en_IN",
+    type: "website",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default function Page() {
   return (
     <>
-
       <HeroSection />
+
       <AboutPNINFOSYS />
 
       <WhyChoosePNINFOSYS />
