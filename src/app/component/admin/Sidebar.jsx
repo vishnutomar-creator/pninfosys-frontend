@@ -11,6 +11,7 @@ import {
   Settings,
   LogOut,
   X,
+  Megaphone,
 } from "lucide-react";
 
 const menus = [
@@ -20,7 +21,7 @@ const menus = [
     icon: LayoutDashboard,
   },
   {
-    name: "services",
+    name: "Services",
     href: "/admin/services",
     icon: FileText,
   },
@@ -38,6 +39,11 @@ const menus = [
     name: "Enrollments",
     href: "/admin/enrollments",
     icon: Users,
+  },
+  {
+    name: "Ticker Bar",
+    href: "/admin/tickarbar",
+    icon: Megaphone,
   },
   {
     name: "Settings",
