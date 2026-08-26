@@ -75,7 +75,7 @@ const FullStackMern = () => {
                                     onClick={() => setShowEnroll(true)}
                                     className="bg-cyan-500 hover:bg-cyan-600 text-slate-900 px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-xs transition-all shadow-xl shadow-cyan-500/20"
                                 >
-                                    Start Learning ₹7000
+                                    Start Learning ₹8000
                                 </button>
                                 <button
                                     onClick={() => setShowEnroll(true)}
@@ -97,7 +97,7 @@ const FullStackMern = () => {
                                 <div className="flex items-center gap-3 text-slate-700 font-bold"><FaCheckCircle className="text-green-500" /> ISO Certified Internship Cert.</div>
                             </div>
                             <div className="border-t border-slate-100 pt-6">
-                                <div className="text-4xl font-black text-slate-900 mb-1">₹9000</div>
+                                <div className="text-4xl font-black text-slate-900 mb-1">₹8000</div>
                                 <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest leading-none">Complete Course Fee</p>
                             </div>
                             <button
