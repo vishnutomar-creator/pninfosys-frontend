@@ -12,6 +12,9 @@ import {
   LogOut,
   X,
   Megaphone,
+  Mail,
+  Code,
+  MessageSquareQuote
 } from "lucide-react";
 
 const menus = [
@@ -44,6 +47,21 @@ const menus = [
     name: "Ticker Bar",
     href: "/admin/tickarbar",
     icon: Megaphone,
+  },
+  {
+    name: "Contact",
+    href: "/admin/contact",
+    icon: Mail,
+  },
+  {
+    name: "Projects",
+    href: "/admin/projects",
+    icon: Code,
+  },
+  {
+    name: "Student Testimonials",
+    href: "/admin/testimonial",
+    icon: MessageSquareQuote,
   },
   {
     name: "Settings",
@@ -107,10 +125,9 @@ export default function Sidebar({ isOpen, setIsOpen }) {
                     href={menu.href}
                     onClick={() => setIsOpen(false)}
                     className={`flex items-center gap-3 rounded-lg px-4 py-3 transition
-                      ${
-                        pathname === menu.href
-                          ? "bg-blue-600 text-white"
-                          : "text-gray-300 hover:bg-slate-800"
+                      ${pathname === menu.href
+                        ? "bg-blue-600 text-white"
+                        : "text-gray-300 hover:bg-slate-800"
                       }`}
                   >
                     <Icon size={20} />

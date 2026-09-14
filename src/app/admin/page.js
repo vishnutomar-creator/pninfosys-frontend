@@ -26,6 +26,7 @@ import {
 import api from "@/lib/api";
 import { getCourses } from "@/services/courseService";
 import { getPlacements } from "@/services/placementsService";
+import { getMentors } from "@/services/mentorService";
 
 export default function Dashboard() {
   const router = useRouter();
@@ -45,6 +46,9 @@ export default function Dashboard() {
 
   // Placements: live count from backend (also used for Success Stories)
   const [totalPlacements, setTotalPlacements] = useState(0);
+
+  // placement: live count from backend 
+  const [totalMentors, setTotalMentors] = useState(0);
 
   // ---- AUTH: on mount, verify a JWT exists in localStorage ----
   useEffect(() => {
@@ -123,8 +127,20 @@ export default function Dashboard() {
       }
     };
 
+    const fetchMentors = async() => {
+      try {
+        const res = await getMentors();
+        const data = 
+        res.data?.mentors ?? res.data?.data ?? res.data ?? [];
+        setTotalMentors(Array.isArray(data) ? data.length : 0);
+      } catch (error) {
+        console.log("Failed to fetch mentors: ", err);
+      }
+    }
+
     fetchCourses();
     fetchPlacements();
+    fetchMentors();
   }, [checkingAuth]);
 
   // ---- AUTH: clears session and redirects to login ----
@@ -217,7 +233,7 @@ export default function Dashboard() {
 
           <StatCard
             title="Total Mentors"
-            value="18"
+            value={totalMentors}
             change="+3"
             icon={<UserCheck size={23} />}
             iconBg="bg-green-100"

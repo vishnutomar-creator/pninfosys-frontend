@@ -166,7 +166,7 @@ const WebDesign = () => {
             <EnrollModal
                 isOpen={showEnroll}
                 onClose={() => setShowEnroll(false)}
-                courseTitle="Webcraft Masterclass"
+                courseTitle="Web designing with ai"
             />
 
         </div>

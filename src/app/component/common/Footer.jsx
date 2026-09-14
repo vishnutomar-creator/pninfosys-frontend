@@ -31,10 +31,10 @@ export default function Footer() {
               <a href="https://youtube.com/@pninfosys" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-red-600 transition-all group">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 2-2h15a2 2 0 0 1 2 2 24.12 24.12 0 0 1 0 10 2 2 0 0 1-2 2h-15a2 2 0 0 1-2-2Z"/><path d="m10 15 5-3-5-3z"/></svg>
               </a>
-              <a href="#" className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-pink-600 transition-all group">
+              <a href="https://www.instagram.com/pn_infosys/" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-pink-600 transition-all group">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
               </a>
-              <a href="#" className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-[#0096FF] transition-all group">
+              <a href="https://www.linkedin.com/company/pninfosys/posts/?feedView=all" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-[#0096FF] transition-all group">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
               </a>
             </div>
@@ -44,14 +44,20 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-black mb-8 text-white uppercase tracking-[0.2em]">Learning Paths</h4>
             <ul className="space-y-4 text-slate-400 text-sm font-medium">
-              <li className="hover:text-blue-400 cursor-pointer transition-colors flex items-center gap-2">
-                <span className="w-1 h-1 bg-[#0096FF] rounded-full"></span> MERN Stack Mastery
+              <li>
+                <a href="https://pninfosys.com/Courses/mern-stack-with-ai" className="hover:text-blue-400 cursor-pointer transition-colors flex items-center gap-2">
+                  <span className="w-1 h-1 bg-[#0096FF] rounded-full"></span> MERN Stack Mastery
+                </a>
               </li>
-              <li className="hover:text-blue-400 cursor-pointer transition-colors flex items-center gap-2">
-                <span className="w-1 h-1 bg-[#0096FF] rounded-full"></span> Data Analytics with Python
+              <li>
+                <a href="https://pninfosys.com/Courses/data-analytics" className="hover:text-blue-400 cursor-pointer transition-colors flex items-center gap-2">
+                  <span className="w-1 h-1 bg-[#0096FF] rounded-full"></span> Data Analytics with Python
+                </a>
               </li>
-              <li className="hover:text-blue-400 cursor-pointer transition-colors flex items-center gap-2">
-                <span className="w-1 h-1 bg-[#0096FF] rounded-full"></span> Web UI/UX Design
+              <li>
+                <a href="https://pninfosys.com/Courses/web-designing-with-ai" className="hover:text-blue-400 cursor-pointer transition-colors flex items-center gap-2">
+                  <span className="w-1 h-1 bg-[#0096FF] rounded-full"></span> Web UI/UX Design
+                </a>
               </li>
             </ul>
           </div>

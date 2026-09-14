@@ -84,6 +84,7 @@ export default function EnrollmentPage() {
       const normalized = rawList.map((item) => ({
         ...item,
         id: item.id ?? (item._id ? String(item._id) : undefined),
+        name: item.name ?? item.fullName,
       }));
 
       setEnrollments(normalized);
@@ -204,6 +205,7 @@ export default function EnrollmentPage() {
         setSelectedEnrollment({
           ...data,
           id: data.id ?? (data._id ? String(data._id) : item.id),
+          name: data.name ?? data.fullname, 
         });
       }
     } catch (err) {
