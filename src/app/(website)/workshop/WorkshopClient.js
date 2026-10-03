@@ -67,6 +67,16 @@ function Workshop() {
                 "/ITM/b.jpeg"
             ],
         },
+        {
+            college: "Vikrant University",
+            students: "150+",
+            topic: "Full Stack Development with AI",
+            images: [
+                "/Vikrant University/IMG_1655.JPG.jpeg",
+                "/Vikrant University/WhatsApp Image 2026-10-03 at 8.55.37 PM.jpeg",
+                
+            ]
+        },
     ];
 
     return (

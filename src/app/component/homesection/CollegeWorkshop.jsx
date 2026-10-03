@@ -91,6 +91,21 @@ const data = {
       "/PRESTIGE/yoinoketdced9fcbjetx.webp"
     ],
   },
+
+  Vikrant_University: {
+    title: "Vikrant University Workshop",
+    type: "Full stack development with AI training",
+    students: "150+",
+    video: "/Vikrant University/IMG_1683.MP4",
+    images: [
+      "/Vikrant University/IMG_1629.jpg",
+      "/Vikrant University/IMG_1644.jpg",
+      "/Vikrant University/IMG_1646.jpg",
+      "/Vikrant University/IMG_1647.jpg",
+      "/Vikrant University/IMG_1655.JPG.jpeg",
+      "/Vikrant University/WhatsApp Image 2026-10-03 at 8.55.37 PM.jpeg"
+    ]
+  }
 };
 
 function CollegeWorkshop() {
